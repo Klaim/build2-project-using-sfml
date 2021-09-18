@@ -1,0 +1,7 @@
+config.cxx=cl
+config.cc.coptions += /O2
+config.cc.poptions += -I$getenv("PWD")/install/release/SFML/include -DSFML_STATIC
+config.cc.loptions += /LIBPATH:$getenv("PWD")/install/release/SFML/lib
+config.cc.libs += openal32.lib flac.lib ogg.lib freetype.lib vorbis.lib vorbisenc.lib vorbisfile.lib opengl32.lib winmm.lib gdi32.lib Advapi32.lib legacy_stdio_definitions.lib
+
+config.install.root=./install/release/game

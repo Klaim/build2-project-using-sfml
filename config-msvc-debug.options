@@ -1,0 +1,9 @@
+config.cxx=cl /MDd
+config.cc.coptions += /Od /Zi
+config.cc.poptions += -I$getenv("PWD")/install/debug/SFML/include -DSFML_STATIC
+config.cc.loptions += /LIBPATH:$getenv("PWD")/install/debug/SFML/lib /DEBUG
+config.cc.libs += openal32.lib flac.lib ogg.lib freetype.lib vorbis.lib vorbisenc.lib vorbisfile.lib opengl32.lib winmm.lib gdi32.lib Advapi32.lib legacy_stdio_definitions.lib
+
+config.install.root = ./install/debug/game
+
+

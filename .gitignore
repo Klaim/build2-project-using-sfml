@@ -1,0 +1,9 @@
+
+
+/build-*
+/install
+/SFML
+
+# Remove this one if you need to commit the game...
+/game
+

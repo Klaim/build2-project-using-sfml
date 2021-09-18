@@ -1,0 +1,9 @@
+
+
+exe{game} : resources/file{**}
+
+resources/file{**}:
+{
+    install = "$install.bin/resources/"
+    install.subdirs = true
+}
