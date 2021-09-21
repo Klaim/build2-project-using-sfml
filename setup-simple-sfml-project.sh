@@ -15,6 +15,12 @@ cmake --build ./build-SFML/  --config Release
 cmake --install ./build-SFML/ --config Debug --prefix ./install/debug/SFML
 cmake --install ./build-SFML/ --config Release --prefix ./install/release/SFML
 
+for file in ./install/debug/SFML/lib/*-d.lib
+do
+  mv "$file" "${file/-s-d.lib/-s.lib}"
+done
+
+
 # ###################### CMAKE
 # mkdir game
 
@@ -52,7 +58,7 @@ cp -r SFML/examples/tennis/* game/
 rm game/CMakeLists.txt game/game.cpp
 
 # # # Now in the buildfile, try to import SFML like if it was already available in the system:
-sed -i '$ a config [string] config.game.sfml_libs_suffix ?= ''\n' game/build/root.build
+# sed -i '$ a config [string] config.game.sfml_libs_suffix ?= ''\n' game/build/root.build
 sed -i -e '/\#import/ r import-sfml.build2' game/buildfile
 sed -i -e '/cxx.poptions/ r resources.build2' game/buildfile
 

@@ -1,15 +1,15 @@
 
 # info "config.game.sfml_libs_suffix = $config.game.sfml_libs_suffix"
 
-sfml_libs = sfml-audio-s sfml-graphics-s sfml-system-s sfml-window-s
+# sfml_libs = sfml-audio-s sfml-graphics-s sfml-system-s sfml-window-s
 
-sfml_libs_names =
-for name : $sfml_libs
-{
-    lib_name = "$name$config.game.sfml_libs_suffix"
-    sfml_libs_names += $lib_name
-    # info "import $lib_name"
-    import libs += sfml%liba{$lib_name}
-}
+# sfml_libs_names =
+# for name : $sfml_libs
+# {
+#     lib_name = "$name$config.game.sfml_libs_suffix"
+#     sfml_libs_names += $lib_name
+#     # info "import $lib_name"
+#     import libs += sfml%liba{$lib_name}
+# }
 
-
+import libs += sfml%liba{sfml-audio-s sfml-graphics-s sfml-system-s sfml-window-s}
